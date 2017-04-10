@@ -6,6 +6,8 @@ function config($routeProvider){
     $routeProvider
         .when('/',{
             templateUrl : 'angular-app/hotels.html',
+            controller : 'hotelsController',
+            controllerAs :'vm'
         });
 }
 
