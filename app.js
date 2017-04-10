@@ -12,8 +12,8 @@ app.use(function(req,res,next){
     next();
 });
 app.use('/public',express.static(path.join(__dirname,'public')));
-app.use('/public/images',express.static(path.join(__dirname,'/public/images')));
 app.use(express.static(path.join(__dirname,'public')));
+app.use('/images',express.static(path.join(__dirname,'/images')));
 app.use('/node_modules',express.static(__dirname + '/node_modules'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/api',routes);
