@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+Copyright (c) 2017 by jnprogrammer (http://jsbin.com/dabucil/9/edit)
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width">
+  <title>Not a JS Bin</title>
+</head>
+<body>
+  <div ng-controller="mainController as MyCtrl">
+    <p>Hello, {{MyCtrl.name}}! </p>
+  </div>
+  <div ng-view>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+<script src="filmApp.js"></script>
+<script src="filmController.js"></script> 
+<script src="dataFactory/dataFactory.js"></script>
+</body>
+</html>
