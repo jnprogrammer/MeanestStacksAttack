@@ -1,11 +1,11 @@
 angular.module('meanhotel').controller('hotelsController',hotelsController);
 
-function hotelsController($http){
+function hotelsController(hotelDataFactory){
     var vm = this;
     vm.title = 'MEAN Hotel App';
-    $http.get('/api/data/hotel-data?count=10').then(function(response){
+    hotelDataFactory.hotelList().then(function(response){
         console.log(response);
-        vm.hotels = response.data;
-    })
+    //vm.hotels = response.data;
+    });
 
 }
