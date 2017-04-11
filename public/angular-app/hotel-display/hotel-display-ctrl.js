@@ -1,16 +1,6 @@
-<<<<<<< HEAD
-angular.module('meanhotel').controller('hotelController',hotelController);
-console.log("DId this work? hotel display controller");
-function hotelController($routeParams,hotelDataFactory){
-    var vm = this;
-    var id = $routeParams.id;
-    hotelDataFactory.hotelDisplay(id).then(function(response){
-        vm.hotel = response.data
-    });
-=======
 angular.module('meanhotel').controller('HotelController', HotelController);
 
-function HotelController($route, $routeParams, hotelDataFactory) {
+function HotelController($route, $routeParams, $window, hotelDataFactory, AuthFactory, jwtHelper) {
   var vm = this;
   var id = $routeParams.id;
   vm.isSubmitted = false;
@@ -23,9 +13,21 @@ function HotelController($route, $routeParams, hotelDataFactory) {
     return new Array(stars);
   }
 
+  vm.isLoggedIn = function() {
+    if (AuthFactory.isLoggedIn) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   vm.addReview = function() {
+
+    var token = jwtHelper.decodeToken($window.sessionStorage.token);
+    var username = token.username;
+
     var postData = {
-      name: vm.name,
+      name: username,
       rating: vm.rating,
       review: vm.review
     };
@@ -42,5 +44,4 @@ function HotelController($route, $routeParams, hotelDataFactory) {
     }
   };
 
->>>>>>> refs/remotes/origin/SPA_Start
 }
