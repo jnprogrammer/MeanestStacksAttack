@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-angular.module('meanhotel').controller('hotelController',hotelController);
-console.log("DId this work? hotel display controller");
-function hotelController($routeParams,hotelDataFactory){
-    var vm = this;
-    var id = $routeParams.id;
-    hotelDataFactory.hotelDisplay(id).then(function(response){
-        vm.hotel = response.data
-    });
-=======
+
 angular.module('meanhotel').controller('HotelController', HotelController);
 
 function HotelController($route, $routeParams, hotelDataFactory) {
@@ -42,5 +33,4 @@ function HotelController($route, $routeParams, hotelDataFactory) {
     }
   };
 
->>>>>>> refs/remotes/origin/SPA_Start
 }
