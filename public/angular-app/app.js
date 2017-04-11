@@ -7,6 +7,11 @@ function config($routeProvider){
             controller : hotelsController,
             controllerAs :'vm'
         })
+        .when('/hotels',{
+            templateUrl:'angular-app/hotel-list-hotels.html',
+            controller: hotelsController,
+            controllerAs: 'vm'
+        })
         .when('/hotel/:id',{
             templateUrl :'angular-app/hotel-list/hotels.html',
             controller : hotelsController,
@@ -17,5 +22,8 @@ function config($routeProvider){
             controller:RegisterController,
             controllerAs:'vm'
         })
+        .otherwise({
+            redirectTo:'/'
+        });
         
 }
